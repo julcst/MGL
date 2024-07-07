@@ -161,8 +161,7 @@ if (GLFW_BUILD_WIN32)
 endif()
 
 if (GLFW_BUILD_COCOA)
-    target_link_libraries(glfw PRIVATE "-L /usr/local/lib -lmgl"
-                                       "-framework Cocoa"
+    target_link_libraries(glfw PUBLIC  "-framework Cocoa"
                                        "-framework IOKit"
                                        "-framework CoreFoundation")
 

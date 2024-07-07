@@ -36,10 +36,34 @@ GLenum  mglGetError(GLMContext ctx)
     return err;
 }
 
+const char* mglErrorString(GLenum error)
+{
+    switch (error)
+    {
+        case GL_NO_ERROR:
+            return "GL_NO_ERROR";
+        case GL_INVALID_ENUM:
+            return "GL_INVALID_ENUM";
+        case GL_INVALID_VALUE:
+            return "GL_INVALID_VALUE";
+        case GL_INVALID_OPERATION:
+            return "GL_INVALID_OPERATION";
+        case GL_INVALID_FRAMEBUFFER_OPERATION:
+            return "GL_INVALID_FRAMEBUFFER_OPERATION";
+        case GL_OUT_OF_MEMORY:
+            return "GL_OUT_OF_MEMORY";
+        case GL_STACK_UNDERFLOW:
+            return "GL_STACK_UNDERFLOW";
+        case GL_STACK_OVERFLOW:
+            return "GL_STACK_OVERFLOW";
+        default:
+            return "UNKNOWN";
+    }
+}
 
 void error_func(GLMContext ctx, const char *func, GLenum error)
 {
-    printf("GL Error func: %s type: %d\n", func, error);
+    printf("GL Error func: %s type: %s\n", func, mglErrorString(error));
 
     if (ctx->state.error)
         return;

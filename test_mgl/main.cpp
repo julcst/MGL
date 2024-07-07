@@ -3276,8 +3276,8 @@ int run_test_case(int test_num, int width, int height)
             break;
             
         case 2:
-            //window = newTestWindow(width, height, "test_draw_arrays_uniformMatrix4fv");
-            //test_draw_arrays_uniformMatrix4fv(window, width, height);
+            window = newTestWindow(width, height, "test_draw_arrays_uniformMatrix4fv");
+            test_draw_arrays_uniformMatrix4fv(window, width, height);
             break;
             
         case 3:
@@ -3387,7 +3387,7 @@ int main_glfw(int argc, const char * argv[])
     width = 512;
     height = 512;
     
-#if 1
+#if 0
     run_test_case(8, width, height);
 #else
     int test_num;

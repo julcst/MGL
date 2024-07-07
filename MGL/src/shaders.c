@@ -20,8 +20,8 @@
 
 #include <stdio.h>
 #include <string.h>
-#include <glslang_c_interface.h>
-#include <glslang_c_shader_types.h>
+#include <glslang/Include/glslang_c_interface.h>
+#include <glslang/Include/glslang_c_shader_types.h>
 
 #include "Fixed_ResourceLimits.h"
 

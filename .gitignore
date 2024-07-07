@@ -12,3 +12,4 @@ external/glslang/
 /SPIRV-Cross
 /MGL.gputrace
 /Info.plist
+.vscode
