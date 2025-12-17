@@ -76,11 +76,15 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(glslang SPIRV-Cross)
 
+set(BUILD_SHARED_LIBS ON CACHE BOOL "" FORCE)
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(GLFW_INSTALL OFF CACHE BOOL "" FORCE)
 add_subdirectory(external/glfw)
+
+# Link GLFW with MGL
+target_link_libraries(glfw PRIVATE ${PROJECT_NAME})
 
 target_link_libraries(${PROJECT_NAME}
     OpenGL::GL
